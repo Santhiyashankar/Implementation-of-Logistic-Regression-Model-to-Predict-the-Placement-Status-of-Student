@@ -24,8 +24,8 @@ To write a program to implement the the Logistic Regression Model to Predict the
 ```
 /*
 Program to implement the the Logistic Regression Model to Predict the Placement Status of Student.
-Developed by: akshaya R
-RegisterNumber: 212223220005
+Developed by: Santhiya S
+RegisterNumber: 212223220098
 */
 ```
 ```
@@ -33,53 +33,81 @@ import pandas as pd
 data=pd.read_csv('Placement_Data.csv')
 data.head()
 data1=data.copy()
-data1=data1.drop(["sl_no","salary"],axis = 1)#removes the specified row or column
+data1=data1.drop(["sl_no","salary"],axis=1)
 data1.head()
 data1.isnull().sum()
 data1.duplicated().sum()
 from sklearn.preprocessing import LabelEncoder
 le=LabelEncoder()
-data1["gender"] = le.fit_transform(data1["gender"])
-data1["ssc_b"] = le.fit_transform(data1["ssc_b"])
-data1["hsc_b"] = le.fit_transform(data1["hsc_b"])
-data1["hsc_s"] = le.fit_transform(data1["hsc_s"])
-data1["degree_t"] = le.fit_transform(data1["degree_t"])
-data1["workex"] = le.fit_transform(data1["workex"])
-data1["specialisation"] = le.fit_transform(data1["specialisation"])
-data1["status"] = le.fit_transform(data1["status"])
+data1["gender"]=le.fit_transform(data1["gender"])
+data1["ssc_b"]=le.fit_transform(data1["ssc_b"])
+data1["hsc_b"]=le.fit_transform(data1["hsc_b"])
+data1["hsc_s"]=le.fit_transform(data1["hsc_s"])
+data1["degree_t"]=le.fit_transform(data1["degree_t"])
+data1["workex"]=le.fit_transform(data1["workex"])
+data1["specialisation"]=le.fit_transform(data1["specialisation"])
+data1["status"]=le.fit_transform(data1["status"])
 data1
 x=data1.iloc[:,:-1]
 x
 y=data1["status"]
 y
 from sklearn.model_selection import train_test_split
-x_train,x_test,y_train,y_test=train_test_split(x,y,test_size = 0.2,random_state = 0)
-from sklearn.linear_model import LogisticRegression
-lr = LogisticRegression(solver = "liblinear")# a library for large
+x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.2,random_state=0)
+from sklearn.linear_model import LogisticRegression 
+lr=LogisticRegression(solver ="liblinear")
 lr.fit(x_train,y_train)
 y_pred = lr.predict(x_test)
 y_pred
+from sklearn.metrics import accuracy_score
+accuracy=accuracy_score(y_test,y_pred)
+accuracy
+from sklearn.metrics import confusion_matrix
+confusion=confusion_matrix(y_test,y_pred)
+confusion
+from sklearn.metrics import classification_report
+classification_report1=classification_report(y_test,y_pred)
+print(classification_report1)
+lr.predict([[1,80,1,90,1,1,90,1,0,85,1,85]])
 ```
 
 ## Output:
 
-![image](https://github.com/user-attachments/assets/9ccdb7f3-9acb-49bd-9b39-bf6e0fcfcaad)
-![image](https://github.com/user-attachments/assets/5791b377-7e5f-47ac-9099-51f6dc23d700)
-![image](https://github.com/user-attachments/assets/08f1e1c9-e92e-42f7-b5a0-87c4e1738843)
-![image](https://github.com/user-attachments/assets/7f188084-5b2f-4767-85ed-b611e32ccf9b)
-![image](https://github.com/user-attachments/assets/c6924923-545e-421e-be7d-df70e85a5b92)
+### op1:
+![op1](https://github.com/user-attachments/assets/d07cee59-e41b-40af-a0e4-34b2e127d155)
 
+### op2:
+![op2](https://github.com/user-attachments/assets/8daa5378-fdd8-41d5-a2fc-a2d2add7b69f)
 
+### op3:
+![op3](https://github.com/user-attachments/assets/6099b552-b79c-4789-8097-8e9e9b8d9782)
 
+### op4:
+![op4](https://github.com/user-attachments/assets/95a6f42d-cbb5-4140-b5b8-26249dcb9f52)
 
-![Screenshot 2024-09-19 113548](https://github.com/user-attachments/assets/0cc79282-3ded-4356-ae51-a17ff8dc2a3b)
+### op5:
+![op5](https://github.com/user-attachments/assets/5dc1e92c-206d-4999-a78c-5cc492c5bd6e)
 
+### op6:
+![op6](https://github.com/user-attachments/assets/252280ad-1d4c-4b25-aaf0-bb85b0ae8f7b)
 
+### op7:
+![op7](https://github.com/user-attachments/assets/a4dac4b5-1234-4187-b3c7-129d2ae81f9f)
 
+### op8:
+![op8](https://github.com/user-attachments/assets/09c13a2f-14f0-4f16-b546-3b971987b57e)
 
-![Screenshot 2024-09-19 113530](https://github.com/user-attachments/assets/571bbb14-0030-4742-a839-8f601f2aaa4f)
+### op9:
+![op10](https://github.com/user-attachments/assets/b9cfc82b-187a-4742-ba56-1946b1531dbf)
 
+### op 10:
+![op 11](https://github.com/user-attachments/assets/b40f1ff9-74cc-4396-9b0a-917b00171f72)
 
+### op 11:
+![op12](https://github.com/user-attachments/assets/82f5add4-33ae-49c4-b495-2653bc1fa14e)
+
+### op 12:
+![op13](https://github.com/user-attachments/assets/4a578676-52fc-420c-9152-f7289d334cbc)
 
 
 ## Result:
