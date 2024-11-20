@@ -30,8 +30,8 @@ RegisterNumber: 212223220098
 ```
 ```
 import pandas as pd
-data1=pd.read_csv('Placement_Data.csv')
-data1.head()
+data=pd.read_csv('Placement_Data.csv')
+data.head()
 data1=data.copy()
 data1=data1.drop(["sl_no","salary"],axis=1)
 data1.head()
